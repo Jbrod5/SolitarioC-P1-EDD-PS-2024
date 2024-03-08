@@ -14,7 +14,7 @@ class Cola{
         Cola();
 
         void encolar(Carta *carta);
-        Carta desencolar();
+        Carta* desencolar();
 
 
 

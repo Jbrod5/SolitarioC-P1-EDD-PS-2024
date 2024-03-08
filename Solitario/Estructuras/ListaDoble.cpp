@@ -94,3 +94,16 @@ void ListaDoble::eliminarEnIndice(int indice){
     longitud--;
 }
 
+Carta* ListaDoble::obtenerEnIndice(int indice){
+    if (indice < 0 || indice >= longitud) {
+        cout << "El índice especificado no es válido." << endl;
+        return nullptr;
+    }
+
+    NodoDoble* actual = primero;
+    for (int i = 0; i < indice; i++) {
+        actual = actual->siguiente;
+    }
+
+    return actual-> carta;
+}

@@ -7,9 +7,9 @@
 
 class NodoDoble {
     public:
-        Carta *carta; 
-        NodoCola *anterior;
-        NodoCola *siguiente; 
+        Carta* carta; 
+        NodoDoble *anterior;
+        NodoDoble *siguiente; 
 
 
         NodoDoble(Carta *cart); 

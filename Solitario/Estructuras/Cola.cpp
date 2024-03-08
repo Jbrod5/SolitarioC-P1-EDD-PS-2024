@@ -18,7 +18,7 @@ void Cola::encolar(Carta *carta){
     ultimo = nuevo; 
 }
 
-Carta Cola::desencolar(){
+Carta* Cola::desencolar(){
     if(primero == nullptr){
         
     }
@@ -30,5 +30,5 @@ Carta Cola::desencolar(){
         ultimo = nullptr; 
     }
 
-    return *aDesencolar; 
+    return aDesencolar; 
 }
