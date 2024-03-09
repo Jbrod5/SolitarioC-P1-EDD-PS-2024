@@ -17,6 +17,7 @@ class Cola{
 
         void encolar(Carta *carta);
         Carta* desencolar();
+        Carta* obtenerCartaADesencolar();
         std::string verSuperior();
 
         int verLongitud(); 

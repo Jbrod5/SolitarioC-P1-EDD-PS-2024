@@ -1,5 +1,8 @@
 #include "Cola.h"
 #include <string>
+#include <iostream>
+using namespace std; 
+
 
 Cola::Cola(){
     primero = nullptr;
@@ -33,6 +36,18 @@ Carta* Cola::desencolar(){
     }
     longitud--;
     return aDesencolar; 
+}
+
+Carta* Cola::obtenerCartaADesencolar(){
+    if(primero == nullptr){
+        
+        Carta *aDesencolar = primero->carta; 
+        return aDesencolar;         
+    }else{
+        cout<<"Se quiere desencolar de una cola vacia!!"<<endl;
+        return; 
+    }
+
 }
 
 std::string Cola::verSuperior(){

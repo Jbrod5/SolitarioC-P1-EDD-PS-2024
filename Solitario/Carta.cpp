@@ -32,3 +32,11 @@ bool Carta::estaBocaArriba(){
 void Carta::voltear(){
     bocaArriba = !bocaArriba;
 }
+
+string Carta::obtenerSimbolo(){
+    return simbolo; 
+}
+
+void Carta::colocarBocaArriba(){
+    bocaArriba = true; 
+}

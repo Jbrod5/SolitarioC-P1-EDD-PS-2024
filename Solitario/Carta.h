@@ -17,6 +17,8 @@ class Carta{
         bool esRojo();
         bool estaBocaArriba();
         void voltear();
+        string obtenerSimbolo(); 
+        void colocarBocaArriba();
 
 };
 

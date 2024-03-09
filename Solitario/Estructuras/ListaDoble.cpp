@@ -94,6 +94,11 @@ void ListaDoble::eliminarEnIndice(int indice){
 
     delete actual;
     longitud--;
+
+    indice --; 
+    if(indice >= 0){
+        obtenerEnIndice(indice)->colocarBocaArriba();
+    }
 }
 
 Carta* ListaDoble::obtenerEnIndice(int indice){
@@ -124,7 +129,11 @@ bool ListaDoble::insertarAlFinalJuego(Carta* car){
 string ListaDoble::imprimir(int nivel){
     if(nivel < longitud){
         Carta* c = obtenerEnIndice(nivel);
-        return c->getCarta(); 
+        if(c->estaBocaArriba()){
+            return c->getCarta();
+        }
+        return "[#]";
+         
     }
     return "       ";
 }

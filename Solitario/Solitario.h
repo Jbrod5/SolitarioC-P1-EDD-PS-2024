@@ -37,12 +37,12 @@ class Solitario{
 
         ListaDoble* lista[7];
 
-        public: 
-            Solitario();
-
-            // Metodos de juego
-            void pasarCartaCola(); 
-            void imprimirTablero();
+    public: 
+        Solitario();
+        // Metodos de juego
+        void pasarCartaCola(); 
+        void imprimirTablero();
+        void moverCarta();
 
 };
 
