@@ -124,3 +124,9 @@ void Solitario::pasarCartaCola(){
         colaB = new Cola();
     }
 }
+
+
+
+void Solitario::imprimirTablero(){
+    
+}

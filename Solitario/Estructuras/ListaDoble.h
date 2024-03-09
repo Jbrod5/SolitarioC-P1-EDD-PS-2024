@@ -4,7 +4,7 @@
 #include "NodoDoble.h"
 #include "Carta.h"
 
-
+#include <string.h>
 class ListaDoble{
 
     private: 
@@ -26,6 +26,9 @@ class ListaDoble{
         void eliminarEnIndice(int indice);
 
 
+        /* Metodo de juego */
+        bool insertarAlFinalJuego(Carta* car);
+        std::string imprimir(int nivel); 
 };
 
 

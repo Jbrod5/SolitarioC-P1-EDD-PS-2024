@@ -42,6 +42,8 @@ void ListaDoble::insertarAlFinal(Carta* carta){
     longitud++;
 }
 
+
+
 void ListaDoble::insertarEnIndice(Carta* carta, int indice){
     if (indice < 0 || indice > longitud) {
         cout << " El indice en donde se intento insertar una carta no es valido. " <<endl; 
@@ -106,4 +108,23 @@ Carta* ListaDoble::obtenerEnIndice(int indice){
     }
 
     return actual-> carta;
+}
+
+
+/* Metodos de juego */
+bool ListaDoble::insertarAlFinalJuego(Carta* car){
+    Carta* ultima = ultimo->carta; 
+    bool insertado = ultima->esRojo() != car->esRojo();
+    if(insertado){
+        insertarAlFinal(car);
+    }
+    return insertado; 
+}
+
+string ListaDoble::imprimir(int nivel){
+    if(nivel < longitud){
+        Carta* c = obtenerEnIndice(nivel);
+        return c->getCarta(); 
+    }
+    return "       ";
 }

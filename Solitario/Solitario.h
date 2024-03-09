@@ -42,6 +42,7 @@ class Solitario{
 
             // Metodos de juego
             void pasarCartaCola(); 
+            void imprimirTablero();
 
 };
 
