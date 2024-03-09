@@ -35,11 +35,13 @@ class Solitario{
 
         Pila* pila[4];
 
-
         ListaDoble* lista[7];
 
         public: 
             Solitario();
+
+            // Metodos de juego
+            void pasarCartaCola(); 
 
 };
 

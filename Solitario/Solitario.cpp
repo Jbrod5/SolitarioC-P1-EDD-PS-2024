@@ -33,13 +33,14 @@ Solitario::Solitario(){
 
     // Instanciar las 7 listas del juego
     for (int listaC = 0; listaC < 7; listaC++){
-        lista[listaC] = new listaC();
+        lista[listaC] = new ListaDoble();
     }
     
 }
 
-/* Genera todas las cartas en orden colocandolas aleatoriamente en la lista */
 void Solitario::iniciarCartas(){
+
+    /* Genera todas las cartas en orden colocandolas aleatoriamente en la lista */
     srand(static_cast<unsigned int>(std::time(nullptr)));
     int posicionAleatoria; 
     Carta* nuevaCarta; 
@@ -62,6 +63,32 @@ void Solitario::iniciarCartas(){
             listaCartas->insertarEnIndice(nuevaCarta, posicionAleatoria);
         }        
     }
+
+    /* Colocar 24 cartas en la colaA */
+    Carta* aEncolar;
+    for(int cartasEncoladas = 0; cartasEncoladas < 24; cartasEncoladas++){
+        aEncolar = listaCartas->obtenerEnIndice(cartasEncoladas);
+        colaA->encolar(aEncolar);
+    }
+
+    /* Colocar 28 cartas en las listas ( diagonalmente ) */
+    int contadorCartas; 
+    int contadorLista = 24;
+    Carta* aEnlistar;
+    for (int columna = 0; columna < 7; columna++)
+    {   contadorCartas = 0; 
+        // Colocar la misma cantidad de cartas que el numero de columna
+        while (contadorCartas <= columna){
+            aEnlistar = listaCartas->obtenerEnIndice(contadorLista);
+            contadorLista ++;
+            if(columna == contadorCartas){
+                aEnlistar->voltear();
+            }
+            lista[columna]->insertarAlFinal(aEnlistar);
+            contadorCartas++;
+        }
+        
+    }
     
 }
 
@@ -82,6 +109,18 @@ bool Solitario::obtenerColor(int s){
     if(s == 0 | s == 1){
         return true;
     }else{
-        false; 
+        return false; 
+    }
+}
+
+/* METODOS DE JUEGO */
+
+/*Pasa una carta de la colaA a colaB, si se acaban las cartas en A se regresan a ella */
+void Solitario::pasarCartaCola(){
+    if(colaA->verLongitud() > 0){
+        colaB->encolar(  colaA->desencolar()  );
+    }else{
+        colaA = colaB;
+        colaB = new Cola();
     }
 }
