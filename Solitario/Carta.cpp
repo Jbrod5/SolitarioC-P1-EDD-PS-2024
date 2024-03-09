@@ -17,7 +17,26 @@ int Carta::getValor(){
 }
 
 string Carta::getCarta(){
-    return(to_string( numero ) + " " + simbolo );
+    string carta;
+    if(numero == 1){
+        carta = "A";
+    }else if(numero != 1 && numero < 10){
+        carta = to_string( numero );
+    }else{
+        switch (numero)
+        {
+        case 11:
+            carta = "J";
+            break;
+        case 12: 
+            carta = "A";
+            break;
+        default:
+            carta = "K";
+            break;
+        }
+    }
+    return( carta + " " + simbolo );
 }
 
 bool Carta::esRojo(){

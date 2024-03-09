@@ -132,7 +132,7 @@ string ListaDoble::imprimir(int nivel){
         if(c->estaBocaArriba()){
             return c->getCarta();
         }
-        return "[#]";
+        return "[# ? #]";
          
     }
     return "       ";

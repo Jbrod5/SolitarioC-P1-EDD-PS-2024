@@ -1,16 +1,19 @@
 #ifndef CARTA_H
 #define CARTA_H
 
+#include <string>
+using namespace std;
+
 class Carta{
 
     private: 
         int numero; 
-        std::string simbolo; 
+        string simbolo; 
         bool bocaArriba; 
         bool rojo; 
 
     public: 
-        Carta(int num, std::string simbolo, bool ro);
+        Carta(int num, string simbolo, bool ro);
         string  getCarta();
         int     getValor();
 

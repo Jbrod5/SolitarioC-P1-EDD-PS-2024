@@ -45,7 +45,7 @@ Carta* Cola::obtenerCartaADesencolar(){
         return aDesencolar;         
     }else{
         cout<<"Se quiere desencolar de una cola vacia!!"<<endl;
-        return; 
+        return nullptr; 
     }
 
 }

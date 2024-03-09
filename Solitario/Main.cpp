@@ -26,7 +26,7 @@ int main(){
         default:
             cout<<"Opcion no reconocida"<<endl; 
             break;
-        }
+        }   
     }
 
     return 0; 

@@ -27,7 +27,7 @@ void Pila::apilar(Carta* carta){
 Carta* Pila::desapilar(){
     if(cima == nullptr){
         cout << "Se intento desapilar de una pila vacia!" << endl; 
-        return; 
+        return nullptr; 
     }else{
         Nodo* temporal = cima;
         cima = cima -> siguiente; 
@@ -57,7 +57,7 @@ Carta* Pila::obtenerCima(){
 bool Pila::apilarCartaJuego(Carta* carta){
 
     //Apilar si son del mismo simbolo
-    bool apilable = carta->esRojo() != cima->carta->esRojo();
+    //bool apilable = carta->esRojo() != cima->carta->esRojo();
     bool apilable = carta->obtenerSimbolo() == cima->carta->obtenerSimbolo(); 
 
     if(apilable){

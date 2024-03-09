@@ -223,7 +223,7 @@ void Solitario::moverCarta(){
 
 
 void Solitario::imprimirTablero(){
-    system("cls");
+    cout<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl<<endl;
     string linea =""; 
     //1. Imprimir pilas y colas
         //1.1 COLAS 
@@ -246,7 +246,7 @@ void Solitario::imprimirTablero(){
             linea += "  " + pila[conPilas]->verCima();
         }
     
-    cout<<linea<<endl; 
+    cout<<linea<<endl<<endl; 
     linea = "";
 
     // 2. Imprimir listas enlazadas
